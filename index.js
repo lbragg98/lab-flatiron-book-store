@@ -43,5 +43,39 @@ const bookStore = {
     ]
 }
 
-// Write your code here!
+//select the title element
+const bookStoreTitle = document.getElementById("header");
+
+//change teh tietle of the bookstore
+bookStoreTitle.textContent = bookStore.name;
+
+//select where the books will be appended
+const bookList = document.getElementById("book-list");
+
+//delete the placeholder
+const deleteThis = document.getElementById("delete-this")
+deleteThis.remove
+
+//loop
+bookStore.books.forEach(book => {
+
+    //elements
+    const bookContainer = document.createElement("li");
+    const bookTitle = document.createElement("h3");
+    const bookAuthor = document.createElement("p");
+    const bookImage = document.createElement("img");
+
+    //set the textcontent attributes
+    bookTitle.textContent = book.title;
+    bookAuthor.textContent = book.author;
+    bookImage.src = book.imageUrl;
+
+    //append to containter
+    bookContainer.appendChild(bookTitle);
+    bookContainer.appendChild(bookAuthor);
+    bookContainer.appendChild(bookImage);
+
+    //append containteer to booklist
+    bookList.appendChild(bookContainer);
+})
 
